@@ -10,6 +10,10 @@ def redirecionar_Gerenciar_Medicos():
     with open("./View/gerenciar_medico.py") as f:
         exec(f.read())
 
+def redirecionar_Agenda_Medico():
+    with open("./View/agenda_medico.py") as f:
+        exec(f.read())
+
 def adicionar_medico(nome, crm, endereco, telefone, especialidade):
     Medicos.adicionar_medico(nome, crm, endereco, telefone, especialidade)
 

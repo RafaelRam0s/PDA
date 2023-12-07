@@ -1,5 +1,5 @@
 from tkinter import *
-
+import Consulta
 agendar_consulta = Tk()
 agendar_consulta.title("Agendar Consulta") # define o titulo do aplicativo
 
@@ -27,10 +27,7 @@ datetime_data = Entry(agendar_consulta)
 datetime_data.pack()
 
 def agendar_Consulta(paciente, medico, data):
-    print(
-        "Cadastro:",
-        paciente, medico, data  
-    )
+    Consulta.adicionar_consulta(paciente, medico, data)
 btn_agendar_consulta = Button(agendar_consulta, text="Agendar Consulta", command=lambda: agendar_Consulta(text_indentificador_paciente.get(), text_indentificador_medico.get(), datetime_data.get())).pack()
 
 agendar_consulta.mainloop()

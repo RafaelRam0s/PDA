@@ -3,6 +3,8 @@ from tkinter.ttk import *
 import sys
 sys.path.append('C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\PDA\\Controller')
 import Especialidade
+import Medico
+
 
 cadastrar_medico = Tk()
 cadastrar_medico.title("Cadastrar Médico") # define o titulo do aplicativo
@@ -39,11 +41,8 @@ combo = ttk.Combobox(cadastrar_medico)
 combo['values']= get_especialidades_nome()
 combo.pack()
 
-def cadastrar_Medico(nome, crm, endereco, telefone):
-    print(
-        "Cadastro:", 
-        nome, crm, endereco, telefone
-    )
+def cadastrar_Medico(nome, crm, endereco, telefone, especialidade):
+    Medico.adicionar_medico(nome, crm, endereco, telefone, especialidade)
 
 def get_especialidade_nome():
     response = []

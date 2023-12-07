@@ -14,9 +14,6 @@ agenda_paciente.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 
 label_titulo = Label(agenda_paciente, text="AGENDA DO PACIENTE", font="Monospace 20 bold").pack()
 
-def pegar_Nome_Paciente():
-    print("Olá Mundo!")
-label_nome = Label(agenda_paciente, text="Nome do Paciente: ").pack()
 def pegar_Consultas():
     print("Olá Mundo!")
 label_tabela_consultas = Label(agenda_paciente, text="Consultas | Médico | Data e hora para realização").pack()

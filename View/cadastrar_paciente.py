@@ -1,7 +1,7 @@
 from tkinter import *
 import sys
 sys.path.append('C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\PDA\\Controller')
-from .Controller import Paciente
+import Paciente
 
 cadastrar_paciente = Tk()
 cadastrar_paciente.title("Cadastrar Paciente") # define o titulo do aplicativo
@@ -47,9 +47,9 @@ text_forma_de_pagamento.pack()
 
 
 def cadastrar_Paciente(nome, data, telefone, endereco, sexo, pagamento):
-    Paciente.adicionar_paciente(nome, data,  sexo, endereco, telefone, pagamento)
+    Controller.Paciente.adicionar_paciente(nome, data,  sexo, endereco, telefone, pagamento)
 
-btn_cadastrar_paciente = Button(cadastrar_paciente, text="Cadastrar Paciente", command=lambda: Paciente.adicionar_paciente(text_nome.get(), datetime_data_nascimento.get(), text_telefone.get(), text_endereco.get(), text_sexo.get(), text_forma_de_pagamento.get())).pack()
+btn_cadastrar_paciente = Button(cadastrar_paciente, text="Cadastrar Paciente", command=lambda: cadastrar_Paciente(text_nome.get(), datetime_data_nascimento.get(), text_telefone.get(), text_endereco.get(), text_sexo.get(), text_forma_de_pagamento.get())).pack()
 
 
 

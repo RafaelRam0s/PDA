@@ -1,4 +1,6 @@
 from tkinter import *
+import Paciente
+import Pedido_exame
 
 gerenciar_medico = Tk()
 gerenciar_medico.title("Gerenciar Pacientes") # define o titulo do aplicativo
@@ -15,9 +17,9 @@ gerenciar_medico.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 label_titulo = Label(gerenciar_medico, text="GERENCIAMENTO DE PACIENTES", font="Monospace 20 bold").pack()
 
 def ver_Historico():
-    print("Olá Mundo!")
+    Paciente.redirecionar_Agenda_Paciente()
 def ver_Pacientes():
-    print("Olá Mundo!")
+    return Paciente.buscar_pacientes()
 label_tabela = Label(gerenciar_medico, text="Indentificador | Nome | Histórico de agendamentos", font="Monospace 12").pack()
-
+label_tabela["text"] += ver_Pacientes()
 gerenciar_medico.mainloop()

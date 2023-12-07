@@ -43,22 +43,8 @@ text_data = Entry(cadastrar_exame)
 text_data.pack()
 
 
-def cadastrar_Exame(text_indentificador,
-text_nome,
-text_valor,
-text_orientacoes,
-text_indentificador_paciente,
-text_indentificador_medico,
-text_data):
-    print("Cadastro:",
-        text_indentificador,
-        text_nome,
-        text_valor,
-        text_orientacoes,
-        text_indentificador_paciente,
-        text_indentificador_medico,
-        text_data
-    )
+def cadastrar_Exame(nome,valor,orientacoes,paciente,medico,data):
+    Exame.adicionar_exame(nome, valor, orientacoes, paciente, medico, data)
 btn_cadastrar_exame = Button(cadastrar_exame, text="Cadastrar Exame", command=lambda: cadastrar_Exame(
     text_indentificador.get(),
     text_nome.get(),

@@ -1,5 +1,6 @@
 from tkinter import *
-
+import Medico
+import Consulta
 gerenciar_medico = Tk()
 gerenciar_medico.title("Gerenciar Médicos") # define o titulo do aplicativo
 
@@ -15,9 +16,10 @@ gerenciar_medico.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 label_titulo = Label(gerenciar_medico, text="GERENCIAMENTO DE MÉDICOS", font="Monospace 20 bold").pack()
 
 def ver_Agenda():
-    print("Olá Mundo!")
+    Medico.redirecionar_Agenda_Medico()
 def ver_Medicos():
-    print("Olá Mundo!")
+    return Medico.buscar_medicos()
 label_tabela = Label(gerenciar_medico, text="Indentificador | Nome | CRM | Endereço | Telefone | Especialidade | Agenda:", font="Monospace 12").pack()
+label_tabela["text"] += ver_Medicos()
 
 gerenciar_medico.mainloop()
