@@ -1,10 +1,12 @@
+import sys
+sys.path.append('C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\PDA\\Model')
 import db_connection as db
-import datetime
 
 
 def adicionar_consulta(paciente, medico, data):
     values = (paciente, medico, data)
     query = f'INSERT INTO consultas(id_paciente, id_medico, data_consulta) VALUES {values}'
+    db.execute_query(query)
 
 
 def buscar_consultas_medico(id_medico):

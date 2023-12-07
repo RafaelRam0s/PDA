@@ -1,9 +1,12 @@
+import sys
+sys.path.append('C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\PDA\\Model')
 import db_connection as db
 
 
-def adicionar_medico(nome, crm, endereco, telefone):
-    values = (nome, crm, endereco, telefone)
-    query = f'INSERT INTO medicos(nome, crm, endereco, telefone) VALUES {values}'
+def adicionar_medico(nome, crm, endereco, telefone, especialidade):
+    values = (nome, crm, endereco, telefone, especialidade)
+    query = f'INSERT INTO medicos(nome, crm, endereco, telefone, especialidade) VALUES {values}'
+    db.execute_query(query)
 
 
 def buscar_medico(id_medico):
